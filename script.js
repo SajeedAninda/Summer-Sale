@@ -15,13 +15,23 @@ function handleDivClicks(card) {
     totalPrice = totalPrice + cardItemValue;
     document.querySelector("#total-price-field").innerText = totalPrice.toFixed(2);
     document.querySelector("#total-field").innerText = totalPrice.toFixed(2);
+    // DISABLING AND ENABLING MAKE PURCHASE BUTTON 
+    let total = parseFloat(document.querySelector("#total-field").innerText);
+    let purchaseBtn = document.querySelector("#purchase-button");
+    if (total > 0) {
+        purchaseBtn.removeAttribute("disabled");
+    }
+    else {
+        purchaseBtn.setAttribute("disabled", true);
+    }
 }
+
 
 //  DISCOUNT FIELD VALUE AND CALCULATIONS  
 document.querySelector("#discountBtn").addEventListener("click", function () {
     let discountFieldValue = document.querySelector("#discount-input-field").value;
     let totalDiscount = (totalPrice * 20) / 100;
-    let discountedPrice=totalPrice-totalDiscount;
+    let discountedPrice = totalPrice - totalDiscount;
     if (discountFieldValue === "SELL200") {
         document.querySelector("#Discount-Amount-Field").innerText = totalDiscount;
     }
@@ -29,6 +39,7 @@ document.querySelector("#discountBtn").addEventListener("click", function () {
         alert("Incorrect Discount Code");
         return;
     }
-    document.querySelector("#discount-input-field").value=""
+    document.querySelector("#discount-input-field").value = ""
     document.querySelector("#total-field").innerText = discountedPrice.toFixed(2);
 })
+
