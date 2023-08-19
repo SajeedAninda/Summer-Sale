@@ -11,9 +11,24 @@ function handleDivClicks(card) {
     itemListDiv.appendChild(p);
     // RETREIVING ITEM PRICES 
     let cardItemValue = parseFloat(card.childNodes[7].innerText.split(" ")[0]);
-    let total = parseFloat(document.querySelector("#total-field").innerText);
     // SETTING ITEM PRICE 
     totalPrice = totalPrice + cardItemValue;
     document.querySelector("#total-price-field").innerText = totalPrice.toFixed(2);
     document.querySelector("#total-field").innerText = totalPrice.toFixed(2);
 }
+
+//  DISCOUNT FIELD VALUE AND CALCULATIONS  
+document.querySelector("#discountBtn").addEventListener("click", function () {
+    let discountFieldValue = document.querySelector("#discount-input-field").value;
+    let totalDiscount = (totalPrice * 20) / 100;
+    let discountedPrice=totalPrice-totalDiscount;
+    if (discountFieldValue === "SELL200") {
+        document.querySelector("#Discount-Amount-Field").innerText = totalDiscount;
+    }
+    else {
+        alert("Incorrect Discount Code");
+        return;
+    }
+    document.querySelector("#discount-input-field").value=""
+    document.querySelector("#total-field").innerText = discountedPrice.toFixed(2);
+})
