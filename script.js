@@ -24,8 +24,15 @@ function handleDivClicks(card) {
     else {
         purchaseBtn.setAttribute("disabled", true);
     }
+    // DISABLING AND ENABLING DISCOUNT COUPON BUTTON 
+    let discountBtn = document.querySelector("#discountBtn");
+    if (totalPrice > 200) {
+        discountBtn.removeAttribute("disabled");
+    }
+    else {
+        discountBtn.setAttribute("disabled", true);
+    }
 }
-
 
 //  DISCOUNT FIELD VALUE AND CALCULATIONS  
 document.querySelector("#discountBtn").addEventListener("click", function () {
@@ -33,7 +40,7 @@ document.querySelector("#discountBtn").addEventListener("click", function () {
     let totalDiscount = (totalPrice * 20) / 100;
     let discountedPrice = totalPrice - totalDiscount;
     if (discountFieldValue === "SELL200") {
-        document.querySelector("#Discount-Amount-Field").innerText = totalDiscount;
+        document.querySelector("#Discount-Amount-Field").innerText = totalDiscount.toFixed(2);
     }
     else {
         alert("Incorrect Discount Code");
