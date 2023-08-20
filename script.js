@@ -27,7 +27,7 @@ function handleDivClicks(card) {
     }
     // DISABLING AND ENABLING DISCOUNT COUPON BUTTON 
     let discountBtn = document.querySelector("#discountBtn");
-    if (totalPrice > 200) {
+    if (totalPrice >= 200) {
         discountBtn.removeAttribute("disabled");
         discountBtn.classList.remove("bg-[#e089c9]");
         discountBtn.classList.add("bg-[#E527B2]");
