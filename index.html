@@ -515,8 +515,24 @@
                         </div>
                     </div>
                     <button id="purchase-button"
-                        class="bg-[#E527B2] w-full mt-4 text-white py-2 px-4 rounded-lg font-medium" disabled>Make
-                        Purchase</button>
+                        class="bg-[#E527B2] w-full mt-4 text-white py-2 px-4 rounded-lg font-medium"
+                        onclick="my_modal_5.showModal()" disabled>
+                        Make Purchase
+                    </button>
+                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                        <form method="dialog" class="modal-box">
+                            <div class="flex flex-col justify-center items-center py-10 space-y-3">
+                                <img class="w-[25%]" src="images/congo.png" alt="">
+                                <h3 class="font-bold text-4xl text-[#111]">Congratulations</h3>
+                                <p class="py-4 text-[#11111199] text-base font-medium">You have Purchased the product
+                                </p>
+                                <button onclick="location.reload()"
+                                    class="bg-[#E527B2] text-white py-2 px-4 rounded-lg font-medium">
+                                    Go Home
+                                </button>
+                            </div>
+                        </form>
+                    </dialog>
                 </div>
             </div>
         </div>
