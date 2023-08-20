@@ -16,9 +16,8 @@ function handleDivClicks(card) {
     document.querySelector("#total-price-field").innerText = totalPrice.toFixed(2);
     document.querySelector("#total-field").innerText = totalPrice.toFixed(2);
     // DISABLING AND ENABLING MAKE PURCHASE BUTTON 
-    let total = parseFloat(document.querySelector("#total-field").innerText);
     let purchaseBtn = document.querySelector("#purchase-button");
-    if (total > 0) {
+    if (totalPrice > 0) {
         purchaseBtn.removeAttribute("disabled");
         purchaseBtn.classList.remove("bg-[#e089c9]");
         purchaseBtn.classList.add("bg-[#E527B2]");
@@ -65,9 +64,8 @@ document.querySelector("#modal-btn").addEventListener("click", function () {
     document.querySelector("#Discount-Amount-Field").innerText = totalDiscount.toFixed(2);
     let itemList = document.querySelector("#Item-List-Div");
     itemList.innerText = "";
-    let total = parseFloat(document.querySelector("#total-field").innerText);
     let purchaseBtn = document.querySelector("#purchase-button");
-    if (total > 0) {
+    if (totalPrice > 0) {
         purchaseBtn.removeAttribute("disabled");
     }
     else {
