@@ -20,6 +20,8 @@ function handleDivClicks(card) {
     let purchaseBtn = document.querySelector("#purchase-button");
     if (total > 0) {
         purchaseBtn.removeAttribute("disabled");
+        purchaseBtn.classList.remove("bg-[#e089c9]");
+        purchaseBtn.classList.add("bg-[#E527B2]");
     }
     else {
         purchaseBtn.setAttribute("disabled", true);
@@ -28,6 +30,8 @@ function handleDivClicks(card) {
     let discountBtn = document.querySelector("#discountBtn");
     if (totalPrice > 200) {
         discountBtn.removeAttribute("disabled");
+        discountBtn.classList.remove("bg-[#e089c9]");
+        discountBtn.classList.add("bg-[#E527B2]");
     }
     else {
         discountBtn.setAttribute("disabled", true);
@@ -76,4 +80,8 @@ document.querySelector("#modal-btn").addEventListener("click", function () {
     else {
         discountBtn.setAttribute("disabled", true);
     }
+    purchaseBtn.classList.remove("bg-[#E527B2]");
+    purchaseBtn.classList.add("bg-[#e089c9]");
+    discountBtn.classList.remove("bg-[#E527B2]");
+    discountBtn.classList.add("bg-[#e089c9]");
 })
