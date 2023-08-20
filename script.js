@@ -35,10 +35,11 @@ function handleDivClicks(card) {
 }
 
 //  DISCOUNT FIELD VALUE AND CALCULATIONS 
-let discountFieldValue = document.querySelector("#discount-input-field").value;
-let totalDiscount = (totalPrice * 20) / 100;
-let discountedPrice = totalPrice - totalDiscount;
 document.querySelector("#discountBtn").addEventListener("click", function () {
+    let discountFieldValue = document.querySelector("#discount-input-field").value;
+    let totalDiscount = (totalPrice * 20) / 100;
+    let discountedPrice = totalPrice - totalDiscount;
+    console.log(discountFieldValue);
     if (discountFieldValue === "SELL200") {
         document.querySelector("#Discount-Amount-Field").innerText = totalDiscount.toFixed(2);
     }
@@ -51,7 +52,7 @@ document.querySelector("#discountBtn").addEventListener("click", function () {
 })
 
 
-// MODAL BUTTON FUNCTIONS 
+// MODAL BUTTON FUNCTIONS
 document.querySelector("#modal-btn").addEventListener("click", function () {
     totalPrice = 0;
     totalDiscount = 0;
@@ -67,5 +68,12 @@ document.querySelector("#modal-btn").addEventListener("click", function () {
     }
     else {
         purchaseBtn.setAttribute("disabled", true);
+    }
+    let discountBtn = document.querySelector("#discountBtn");
+    if (totalPrice > 200) {
+        discountBtn.removeAttribute("disabled");
+    }
+    else {
+        discountBtn.setAttribute("disabled", true);
     }
 })
