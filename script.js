@@ -42,7 +42,6 @@ document.querySelector("#discountBtn").addEventListener("click", function () {
     let discountFieldValue = document.querySelector("#discount-input-field").value;
     let totalDiscount = (totalPrice * 20) / 100;
     let discountedPrice = totalPrice - totalDiscount;
-    console.log(discountFieldValue);
     if (discountFieldValue === "SELL200") {
         document.querySelector("#Discount-Amount-Field").innerText = totalDiscount.toFixed(2);
     }
