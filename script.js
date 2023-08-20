@@ -34,11 +34,11 @@ function handleDivClicks(card) {
     }
 }
 
-//  DISCOUNT FIELD VALUE AND CALCULATIONS  
+//  DISCOUNT FIELD VALUE AND CALCULATIONS 
+let discountFieldValue = document.querySelector("#discount-input-field").value;
+let totalDiscount = (totalPrice * 20) / 100;
+let discountedPrice = totalPrice - totalDiscount;
 document.querySelector("#discountBtn").addEventListener("click", function () {
-    let discountFieldValue = document.querySelector("#discount-input-field").value;
-    let totalDiscount = (totalPrice * 20) / 100;
-    let discountedPrice = totalPrice - totalDiscount;
     if (discountFieldValue === "SELL200") {
         document.querySelector("#Discount-Amount-Field").innerText = totalDiscount.toFixed(2);
     }
@@ -50,3 +50,22 @@ document.querySelector("#discountBtn").addEventListener("click", function () {
     document.querySelector("#total-field").innerText = discountedPrice.toFixed(2);
 })
 
+
+// MODAL BUTTON FUNCTIONS 
+document.querySelector("#modal-btn").addEventListener("click", function () {
+    totalPrice = 0;
+    totalDiscount = 0;
+    document.querySelector("#total-price-field").innerText = totalPrice.toFixed(2);
+    document.querySelector("#total-field").innerText = totalPrice.toFixed(2);
+    document.querySelector("#Discount-Amount-Field").innerText = totalDiscount.toFixed(2);
+    let itemList = document.querySelector("#Item-List-Div");
+    itemList.innerText = "";
+    let total = parseFloat(document.querySelector("#total-field").innerText);
+    let purchaseBtn = document.querySelector("#purchase-button");
+    if (total > 0) {
+        purchaseBtn.removeAttribute("disabled");
+    }
+    else {
+        purchaseBtn.setAttribute("disabled", true);
+    }
+})
