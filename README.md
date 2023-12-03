@@ -1,0 +1,5 @@
+Simple Interactive Summer Sale Shopping Website Made with Tailwind CSS & Vanilla JS . This website has multiple cards in the cards section, and these cards are updated in the cart section when they are clicked. The names of the cards are shown as a list, and the price is updated as well. When no cards are clicked, the make purchase button is disabled. The coupon button is disabled until a purchase of total 200tk or more is made. When it is made, using the promo code in the coupon code field will result in a 20% discount on the total amount. That amount is calculated and shown on Discount and Total Section properly. Finally, when the Make purchase button is clicked, it shows Purchase Successfully popup and when go home is clicked from there, the value of the card resetted. 
+
+The website is made responsive for both Mobile(Mobile-L:<425px), Tablet(<768px) and also Desktop Devices. All of the functionalities is working as per the requirements.
+
+Live Link: https://roaring-cucurucho-3b225d.netlify.app/
